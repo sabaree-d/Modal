@@ -1,0 +1,104 @@
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 60%; /* Increased width */
+  max-width: 500px; /* Added max-width for responsiveness */
+  position: relative; /* added for positioning tooltips */
+}
+
+.input-container {
+  margin-bottom: 20px;
+  position: relative; /* added for positioning tooltips */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type='text'],
+input[type='date'] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error-msg {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid orange;
+  padding: 5px;
+  border-radius: 5px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  z-index: 999;
+}
+
+.tooltip.show {
+  visibility: visible;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid orange;
+}
+
+.tooltip::after {
+  content: "!";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white;
+}
